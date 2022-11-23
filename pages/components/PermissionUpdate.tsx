@@ -67,33 +67,33 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
   const finalRef = React.useRef(null);
 
   /***************************update********* */
-  const handleUpdate: SubmitHandler<Permission> = async (item:Permission) => {
+  const handleUpdate: SubmitHandler<Permission> = async (item) => {
     console.log(item.permission_ID);
     console.log(item.permission_section);
 
-    try {
-      const body = {
-        permission_ID: item.permission_ID,
-        permission_section: item.permission_section,
-        permission_section_code: item.permission_section_code,
-        permission_item: item.permission_item,
-        permission_item_code: item.permission_item_code,
-        permission_item_description: item.permission_item_description,
-      };
-      //alert(JSON.stringify(body));
-      await fetch("../api/updatePermission", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      toast({
-        containerStyle: {
-          border: "0",
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const body = {
+    //     permission_ID: item.permission_ID,
+    //     permission_section: item.permission_section,
+    //     permission_section_code: item.permission_section_code,
+    //     permission_item: item.permission_item,
+    //     permission_item_code: item.permission_item_code,
+    //     permission_item_description: item.permission_item_description,
+    //   };
+    //   //alert(JSON.stringify(body));
+    //   await fetch("../api/updatePermission", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(body),
+    //   });
+    //   toast({
+    //     containerStyle: {
+    //       border: "0",
+    //     },
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (
