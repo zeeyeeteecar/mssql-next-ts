@@ -34,7 +34,14 @@ interface Permission {
 }
 
 interface Prop_Permission {
-  permission: Permission;
+  permission: {
+    permission_ID: number;
+    permission_section: string;
+    permission_section_code: string;
+    permission_item: string;
+    permission_item_code: string;
+    permission_item_description: string;
+  };
 }
 
 // const EditPerformerButton: FunctionComponent<Props> = ({
