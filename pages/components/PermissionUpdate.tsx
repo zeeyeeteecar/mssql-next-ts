@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { NextPage } from "next";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import {
   IconButton,
   Button,
@@ -50,7 +50,7 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm<Permission>();
 
   const toast = useToast({
     position: "top",
@@ -67,7 +67,7 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
   const finalRef = React.useRef(null);
 
   /***************************update********* */
-  const handleUpdate = async (item: any) => {
+  const handleUpdate = async (item: Permission) => {
     console.log(item.permission_ID);
     console.log(item.permission_section);
 
