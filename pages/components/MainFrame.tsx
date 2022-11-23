@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
 
-import Permission, { Prop_Permission } from "../Ts";
+import { Permission, Prop_Permission } from "../Ts";
 import PermissionUpdate from "./PermissionUpdate";
 
 export default function MainFrame() {
