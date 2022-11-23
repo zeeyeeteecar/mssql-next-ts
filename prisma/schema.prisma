@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model tAdmin {
+  ID           Int       @id @default(autoincrement())
+  StaffCode    String?   @db.NVarChar(255)
+  StaffFName   String?   @db.NVarChar(255)
+  StaffLName   String?   @db.NVarChar(255)
+  Login        String?   @db.NVarChar(50)
+  Password     String?   @db.NVarChar(50)
+  UserLevel    String?   @db.NVarChar(1)
+  UserType     String?   @db.NVarChar(1)
+  UserActivate String?   @db.NVarChar(20)
+  UserDate     DateTime? @db.DateTime
+  BoardStaff   String?   @db.NVarChar(50)
+  MemberID     String?   @db.NVarChar(10)
+}
+
+model tbl_permission {
+  permission_ID               Int    @id @default(autoincrement())
+  permission_section          String @db.NVarChar(255)
+  permission_section_code     String @db.NVarChar(255)
+  permission_item             String @db.NVarChar(255)
+  permission_item_code        String @db.NVarChar(255)
+  permission_item_description String @db.NVarChar(255)
+}
