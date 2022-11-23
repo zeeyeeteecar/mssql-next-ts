@@ -17,7 +17,6 @@ import { EditIcon } from "@chakra-ui/icons";
 //import { Permission, Prop_Permission } from "../Ts";
 import PermissionUpdate from "./PermissionUpdate";
 
-
 interface Permission {
   permission_ID: number;
   permission_section: string;
@@ -80,7 +79,18 @@ export default function MainFrame() {
                       <Text w="300px">
                         {permission.permission_item_description}
                       </Text>
-                      <PermissionUpdate permission={permission} />
+                      <PermissionUpdate
+                        permission_ID={permission.permission_ID}
+                        permission_section={permission.permission_section}
+                        permission_section_code={
+                          permission.permission_section_code
+                        }
+                        permission_item={permission.permission_item}
+                        permission_item_code={permission.permission_item_code}
+                        permission_item_description={
+                          permission.permission_item_description
+                        }
+                      />
 
                       <Radio value={permission.permission_item_code}></Radio>
                     </HStack>

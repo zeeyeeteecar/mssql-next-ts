@@ -48,7 +48,16 @@ interface Prop_Permission {
 //   Performer_id,
 //   Performer_title,
 // }) => {
-export default function PermissionUpdate({ permission }: any) {
+//export default function PermissionUpdate({ permission }: Prop_Permission) {
+
+export default function PermissionUpdate({
+  permission_ID,
+  permission_section,
+  permission_section_code,
+  permission_item,
+  permission_item_code,
+  permission_item_description,
+}: Permission) {
   //const { Performer_id } = props;
   //const { Performer_title } = props;
 
@@ -103,7 +112,7 @@ export default function PermissionUpdate({ permission }: any) {
     // }
   };
 
-  const permission_ID: number = permission.permission_ID;
+
 
   return (
     <>
@@ -143,7 +152,7 @@ export default function PermissionUpdate({ permission }: any) {
                   <Text w={"110px"}>section</Text>
                   <Input
                     {...register("permission_section")}
-                    defaultValue={permission.permission_section}
+                    defaultValue={permission_section}
                   ></Input>
                 </HStack>
 
@@ -151,7 +160,7 @@ export default function PermissionUpdate({ permission }: any) {
                   <Text w={"110px"}>section code</Text>
                   <Input
                     {...register("permission_section_code")}
-                    defaultValue={permission.permission_section_code}
+                    defaultValue={permission_section_code}
                   ></Input>
                 </HStack>
 
@@ -159,7 +168,7 @@ export default function PermissionUpdate({ permission }: any) {
                   <Text w={"110px"}>item</Text>
                   <Input
                     {...register("permission_item")}
-                    defaultValue={permission.permission_item}
+                    defaultValue={permission_item}
                   ></Input>
                 </HStack>
 
@@ -167,7 +176,7 @@ export default function PermissionUpdate({ permission }: any) {
                   <Text w={"120px"}>item_code</Text>
                   <Input
                     {...register("permission_item_code")}
-                    defaultValue={permission.permission_item_code}
+                    defaultValue={permission_item_code}
                   ></Input>
                 </HStack>
 
@@ -175,7 +184,7 @@ export default function PermissionUpdate({ permission }: any) {
                   <Text w={"110px"}>description</Text>
                   <Input
                     {...register("permission_item_description")}
-                    defaultValue={permission.permission_item_description}
+                    defaultValue={permission_item_description}
                   ></Input>
                 </HStack>
 
