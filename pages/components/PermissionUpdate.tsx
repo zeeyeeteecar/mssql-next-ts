@@ -96,6 +96,8 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
     }
   };
 
+  const permission_ID: number = permission.permission_ID;
+
   return (
     <>
       <IconButton
@@ -125,7 +127,7 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
                   <Text w={"110px"}>ID</Text>
                   <Input
                     {...register("permission_ID")}
-                    defaultValue={""}
+                    defaultValue={permission_ID}
                     readOnly={true}
                   ></Input>
                 </HStack>
