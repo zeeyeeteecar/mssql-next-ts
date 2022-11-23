@@ -22,7 +22,20 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import {Permission,  Prop_Permission } from "../Ts";
+//import {Permission,  Prop_Permission } from "../Ts";
+
+interface Permission {
+  permission_ID: number;
+  permission_section: string;
+  permission_section_code: string;
+  permission_item: string;
+  permission_item_code: string;
+  permission_item_description: string;
+}
+
+interface Prop_Permission {
+  permission: Permission;
+}
 
 // const EditPerformerButton: FunctionComponent<Props> = ({
 //   Performer_id,
