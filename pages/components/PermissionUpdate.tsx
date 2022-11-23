@@ -67,7 +67,7 @@ export default function PermissionUpdate({ permission }: Prop_Permission) {
   const finalRef = React.useRef(null);
 
   /***************************update********* */
-  const handleUpdate: SubmitHandler<Permission> = async (item) => {
+  const handleUpdate: SubmitHandler<Permission> = async (item:Permission) => {
     console.log(item.permission_ID);
     console.log(item.permission_section);
 
