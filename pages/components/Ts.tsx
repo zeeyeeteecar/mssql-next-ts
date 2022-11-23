@@ -10,7 +10,3 @@ export interface Permission {
 export interface Prop_Permission {
   permission: Permission;
 }
-
-export interface Array_Permission {
-  array_Permission: Permission[];
-}
