@@ -12,13 +12,10 @@ import {
   Radio,
   RadioGroup,
 } from "@chakra-ui/react";
-import {
-  EditIcon,
+import { EditIcon } from "@chakra-ui/icons";
 
-} from "@chakra-ui/icons";
-
-import *  as ts from "./ts"
-import PermissionUpdate from "./PermissionUpdate"
+import * as ts from "./Ts";
+import PermissionUpdate from "./PermissionUpdate";
 
 export default function MainFrame() {
   /********************* List all permission *****/
@@ -61,11 +58,15 @@ export default function MainFrame() {
                     >
                       <Text w="50px">{permission.permission_ID}</Text>
                       <Text w="100px">{permission.permission_section}</Text>
-                      <Text w="100px">{permission.permission_section_code}</Text>
+                      <Text w="100px">
+                        {permission.permission_section_code}
+                      </Text>
                       <Text w="100px">{permission.permission_item}</Text>
                       <Text w="100px">{permission.permission_item_code}</Text>
-                      <Text w="300px">{permission.permission_item_description}</Text>
-                      <PermissionUpdate permission={permission}/> 
+                      <Text w="300px">
+                        {permission.permission_item_description}
+                      </Text>
+                      <PermissionUpdate permission={permission} />
 
                       <Radio value={permission.permission_item_code}></Radio>
                     </HStack>

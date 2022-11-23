@@ -22,7 +22,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import * as ts from "./ts";
+import * as ts from "./Ts";
 
 // const EditPerformerButton: FunctionComponent<Props> = ({
 //   Performer_id,
@@ -145,7 +145,7 @@ export default function PermissionUpdate({ permission }: ts.Prop_Permission) {
                   <Text w={"120px"}>item_code</Text>
                   <Input
                     {...register("permission_item_code")}
-                    defaultValue={permission.permission_item_code}   
+                    defaultValue={permission.permission_item_code}
                   ></Input>
                 </HStack>
 
