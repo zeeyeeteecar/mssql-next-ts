@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
 
-import * as ts from "./Ts";
+import {Permission,Prop_Permission} from "./Ts";
 import PermissionUpdate from "./PermissionUpdate";
 
 export default function MainFrame() {
@@ -44,7 +44,7 @@ export default function MainFrame() {
           <RadioGroup defaultValue="">
             <VStack w="100%" borderWidth="0px">
               {data &&
-                data.map((permission: ts.Permission, index: any) => {
+                data.map((permission: Permission, index: any) => {
                   //console.log("Performer_id==", item.Performer_id);
 
                   return (
