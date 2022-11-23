@@ -22,27 +22,27 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-//import {Permission,  Prop_Permission } from "../Ts";
+import {Permission,  Prop_Permission } from "../Ts";
 
-interface Permission {
-  permission_ID: number;
-  permission_section: string;
-  permission_section_code: string;
-  permission_item: string;
-  permission_item_code: string;
-  permission_item_description: string;
-}
+// interface Permission {
+//   permission_ID: number;
+//   permission_section: string;
+//   permission_section_code: string;
+//   permission_item: string;
+//   permission_item_code: string;
+//   permission_item_description: string;
+// }
 
-interface Prop_Permission {
-  permission: {
-    permission_ID: number;
-    permission_section: string;
-    permission_section_code: string;
-    permission_item: string;
-    permission_item_code: string;
-    permission_item_description: string;
-  };
-}
+// interface Prop_Permission {
+//   permission: {
+//     permission_ID: number;
+//     permission_section: string;
+//     permission_section_code: string;
+//     permission_item: string;
+//     permission_item_code: string;
+//     permission_item_description: string;
+//   };
+// }
 
 // const EditPerformerButton: FunctionComponent<Props> = ({
 //   Performer_id,
@@ -83,33 +83,33 @@ export default function PermissionUpdate({
   const finalRef = React.useRef(null);
 
   /***************************update********* */
-  const handleUpdate: SubmitHandler<Permission> = async (item) => {
+  const handleUpdate  = async (item:Permission) => {
     console.log(item.permission_ID);
     console.log(item.permission_section);
 
-    // try {
-    //   const body = {
-    //     permission_ID: item.permission_ID,
-    //     permission_section: item.permission_section,
-    //     permission_section_code: item.permission_section_code,
-    //     permission_item: item.permission_item,
-    //     permission_item_code: item.permission_item_code,
-    //     permission_item_description: item.permission_item_description,
-    //   };
-    //   //alert(JSON.stringify(body));
-    //   await fetch("../api/updatePermission", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(body),
-    //   });
-    //   toast({
-    //     containerStyle: {
-    //       border: "0",
-    //     },
-    //   });
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const body = {
+        permission_ID: item.permission_ID,
+        permission_section: item.permission_section,
+        permission_section_code: item.permission_section_code,
+        permission_item: item.permission_item,
+        permission_item_code: item.permission_item_code,
+        permission_item_description: item.permission_item_description,
+      };
+      //alert(JSON.stringify(body));
+      await fetch("../api/updatePermission", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      toast({
+        containerStyle: {
+          border: "0",
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
 
