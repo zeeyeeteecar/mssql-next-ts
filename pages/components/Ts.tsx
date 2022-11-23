@@ -1,4 +1,4 @@
-export interface Permission {
+export default interface Permission {
   permission_ID: number;
   permission_section: string;
   permission_section_code: string;
@@ -7,6 +7,6 @@ export interface Permission {
   permission_item_description: string;
 }
 
-export interface Prop_Permission {
+export type Prop_Permission = {
   permission: Permission;
-}
+};
