@@ -1,4 +1,4 @@
-export   type  Permission = {
+export type Permission = {
   permission_ID: number;
   permission_section: string;
   permission_section_code: string;
@@ -6,14 +6,13 @@ export   type  Permission = {
   permission_item_code: string;
   permission_item_description: string;
 };
-export default Permission;
 
 export type Prop_Permission = {
   permission: Permission;
 };
 
-
-
 export type Array_Permission = {
   array_Permission: Permission[];
 };
+
+export default Permission;
