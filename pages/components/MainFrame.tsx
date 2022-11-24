@@ -14,21 +14,21 @@ import {
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
 
-//import { Permission, Prop_Permission } from "../Ts";
+import { Permission, Prop_Permission } from "../Ts";
 import PermissionUpdate from "./PermissionUpdate";
 
-interface Permission {
-  permission_ID: number;
-  permission_section: string;
-  permission_section_code: string;
-  permission_item: string;
-  permission_item_code: string;
-  permission_item_description: string;
-}
+// interface Permission {
+//   permission_ID: number;
+//   permission_section: string;
+//   permission_section_code: string;
+//   permission_item: string;
+//   permission_item_code: string;
+//   permission_item_description: string;
+// }
 
-interface Prop_Permission {
-  permission: Permission;
-}
+// interface Prop_Permission {
+//   permission: Permission;
+// }
 
 export default function MainFrame() {
   /********************* List all permission *****/
