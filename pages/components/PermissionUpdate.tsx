@@ -9,6 +9,7 @@ import {
   useToast,
   Text,
   VStack,
+  Select,
 } from "@chakra-ui/react";
 import { EditIcon } from "@chakra-ui/icons";
 
@@ -22,7 +23,8 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import {Permission,  Prop_Permission } from "../Ts";
+import { Permission, Prop_Permission } from "../Ts";
+import { options } from "./PermissionSectionList";
 
 // interface Permission {
 //   permission_ID: number;
@@ -83,7 +85,7 @@ export default function PermissionUpdate({
   const finalRef = React.useRef(null);
 
   /***************************update********* */
-  const handleUpdate  = async (item:Permission) => {
+  const handleUpdate = async (item: Permission) => {
     console.log(item.permission_ID);
     console.log(item.permission_section);
 
@@ -111,8 +113,6 @@ export default function PermissionUpdate({
       console.log(error);
     }
   };
-
-
 
   return (
     <>
@@ -148,12 +148,21 @@ export default function PermissionUpdate({
                   ></Input>
                 </HStack>
 
+
                 <HStack>
                   <Text w={"110px"}>section</Text>
-                  <Input
+                  <Select
+                    value={permission_section}
                     {...register("permission_section")}
-                    defaultValue={permission_section}
-                  ></Input>
+                  >
+                    {options.map((item) => {
+                      return (
+                        <option key={item.value} value={item.value}>
+                          {item.text}
+                        </option>
+                      );
+                    })}
+                  </Select>
                 </HStack>
 
                 <HStack>

@@ -17,20 +17,14 @@ import { EditIcon } from "@chakra-ui/icons";
 import { Permission, Prop_Permission } from "../Ts";
 import PermissionUpdate from "./PermissionUpdate";
 
-// interface Permission {
-//   permission_ID: number;
-//   permission_section: string;
-//   permission_section_code: string;
-//   permission_item: string;
-//   permission_item_code: string;
-//   permission_item_description: string;
-// }
-
-// interface Prop_Permission {
-//   permission: Permission;
-// }
+import {options} from "./PermissionSectionList";
 
 export default function MainFrame() {
+  /********************* List all permission *****/
+  const fetcher_PermissionSectionList = options;
+  
+  console.log("fetcher_PermissionSectionList", fetcher_PermissionSectionList);
+
   /********************* List all permission *****/
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR("/api/findPermission", fetcher, {
